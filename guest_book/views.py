@@ -7,9 +7,9 @@ def index(request):
     posts = BukuTamu.objects.all()
     if request.method == 'POST':
         form = BukuTamuForm(request.POST)
-        if form.is_valid():
+        if form.is_valid():            
             form.save()
-            messages.success(request, 'Data berhasil disimpan')
+            messages.success(request, 'Data berhasil disimpan')            
             return redirect('index')
     else:
         form = BukuTamuForm()
