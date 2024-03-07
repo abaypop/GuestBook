@@ -5,7 +5,7 @@ import datetime
 class BukuTamuForm(forms.ModelForm):    
   class Meta:
     model = BukuTamu
-    fields = ('nama','perusahaan','jumlah_tamu','tgl_awal','tgl_akhir','tujuan','keperluan')
+    fields = ('nama','perusahaan','jumlah_tamu','tgl_awal','tgl_akhir','tujuan','keperluan')  
     widgets = {
       'nama': forms.TextInput(
         attrs={'class': 'form-control', 'id':'nama', 'placeholder':'Nama', 'autocomplete': 'off'}
@@ -17,10 +17,10 @@ class BukuTamuForm(forms.ModelForm):
         attrs={'class': 'form-control', 'id':'jumlah_tamu', 'placeholder':'Jumlah Tamu', 'min':1}
         ),
       'tgl_awal': forms.DateInput(        
-        attrs={'class': 'form-control', 'type': 'date', 'id': 'tgl_awal', 'placeholder':'Dari Tanggal'}
+        attrs={'class': 'form-control', 'type': 'date', 'id': 'tgl_awal', 'placeholder':'Dari Tanggal', 'value': datetime.date.today}
         ),
       'tgl_akhir': forms.DateInput(
-        attrs={'class': 'form-control', 'type': 'date', 'id':'tgl_akhir', 'placeholder':'Hingga Tanggal'}
+        attrs={'class': 'form-control', 'type': 'date', 'id':'tgl_akhir', 'placeholder':'Hingga Tanggal', 'value': datetime.date.today}
         ),
       'tujuan': forms.TextInput(
         attrs={'class': 'form-control', 'id':'tujuan', 'placeholder':'Tujuan'}
