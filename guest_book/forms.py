@@ -1,8 +1,8 @@
 from django import forms
 from .models import BukuTamu
-import datetime
+from django.utils.translation import gettext as _
 
-class BukuTamuForm(forms.ModelForm):    
+class BukuTamuForm(forms.ModelForm):      
   class Meta:
     model = BukuTamu
     fields = ('nama','perusahaan','jumlah_tamu','tujuan','keperluan')  
@@ -13,7 +13,7 @@ class BukuTamuForm(forms.ModelForm):
       'perusahaan': forms.TextInput(
         attrs={'class': 'form-control', 'id':'perusahaan', 'placeholder':'Perusahaan', 'autocomplete': 'off'}
         ),
-      'jumlah_tamu': forms.NumberInput(
+      'jumlah_tamu': forms.NumberInput(        
         attrs={'class': 'form-control', 'id':'jumlah_tamu', 'placeholder':'Jumlah Tamu', 'min':1}
         ),      
       'tujuan': forms.TextInput(
@@ -22,4 +22,4 @@ class BukuTamuForm(forms.ModelForm):
       'keperluan': forms.Textarea(
         attrs={'class': 'form-control', 'id':'keperluan', 'placeholder':'Keperluan'}
         )
-    }   
+    }              

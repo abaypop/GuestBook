@@ -23,7 +23,8 @@
       <div class="col-lg-5 text-center text-lg-start">        
         <h1 class="display-4 fw-bold lh-1 mb-3">Halo,</h1>
         <p class="col-lg-10 fs-4">Selamat datang di<br \><b>Politeknik STTT Bandung</b></p>                
-        <p class="col-lg-10">Silahkan isi data terlebih dahulu pada isian di samping kanan</p>
+        <p class="col-lg-10">Silahkan isi data terlebih dahulu pada isian di samping kanan</p>        
+        <div id="clock"></div>
       </div>
       <div class="col-lg-7 mx-auto">
         
@@ -84,6 +85,23 @@
         })        
       {% endfor %}
     {% endif %}
+  </script>
+  <script>
+    function startTime() {
+      const today = new Date();
+      let h = today.getHours();
+      let m = today.getMinutes();
+      let s = today.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      document.getElementById('clock').innerHTML =  h + ":" + m + ":" + s;
+      setTimeout(startTime, 1000);
+    }
+    
+    function checkTime(i) {
+      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+      return i;
+    }
   </script>  
 </body>
 
