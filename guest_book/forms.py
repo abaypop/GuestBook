@@ -18,9 +18,10 @@ class BukuTamuForm(forms.ModelForm):
                'oninput': 'this.setCustomValidity("")'}
         ),
       'jumlah_tamu': forms.NumberInput(        
-        attrs={'class': 'form-control', 'id':'jumlah_tamu', 'placeholder':'Jumlah Tamu', 'min':1,
+        attrs={'class': 'form-control', 'id':'jumlah_tamu', 'placeholder':'Jumlah Tamu', 'min':1, 'max':50,
                'oninvalid':'this.setCustomValidity("Masukkan jumlah tamu")',
-               'oninput': 'this.setCustomValidity("")'}
+               'oninput':'this.setCustomValidity("")',
+               'input-bg':'Red'}
         ),      
       'tujuan': forms.TextInput(
         attrs={'class': 'form-control', 'id':'tujuan', 'placeholder':'Tujuan',
